@@ -1,17 +1,15 @@
 import express from 'express';
 import cors from 'cors';
-import { calculateMonthlyPayment } from '@driva/utils'; 
+import loanRoutes from './routes/loan.routes';
+import 'dotenv/config';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+const ROUTE_PREFIX = process.env.ROUTE_PREFIX || '';
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (_req, res) => {
-  res.send('Driva backend is running 🚀');
-  calculateMonthlyPayment(10000, 5, 5);
-});
+app.use(`${ROUTE_PREFIX}/loan`, loanRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);

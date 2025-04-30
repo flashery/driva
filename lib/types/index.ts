@@ -1,11 +1,4 @@
-export interface LoanApplication {
-    firstName: string;
-    lastName: string;
-    email: string;
-    employmentStatus: 'Employed' | 'Self-Employed' | 'Unemployed';
-    employerName?: string;
-    loanPurpose: string;
-    amount: number;
-    deposit: number;
-    loanTerm: number;
-}
+export * from './LoanApplication';
+export * from './Lender';
+export * from './LenderOffer';
+export * from './ApplyPayload';

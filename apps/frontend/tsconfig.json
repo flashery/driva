@@ -1,8 +1,20 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "rootDir": "./src",
-    "outDir": "./dist"
+    "rootDir": "../../",
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@driva/schema": ["../../lib/schema"],
+      "@driva/utils": ["../../lib/utils"],
+      "@driva/types": ["../../lib/types"],
+      "@driva/data": ["../../lib/data"]
+    },
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
   },
   "include": ["src"]
 }
+
