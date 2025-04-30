@@ -1,0 +1,6 @@
+# root node_modules
+node_modules/
+
+# sub-package node_modules
+apps/**/node_modules/
+lib/**/node_modules/

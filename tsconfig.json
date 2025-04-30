@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@backend/*": [
+        "apps/backend/src/*"
+      ],
+      "@frontend/*": [
+        "apps/frontend/src/*"
+      ],
+      "@driva/utils": [
+        "lib/utils/index.ts"
+      ],
+      "@driva/types": [
+        "lib/types/index.ts"
+      ],
+      "@driva/schema": [
+        "lib/schema/index.ts"
+      ],
+      "@driva/data": [
+        "lib/data/index.ts"
+      ]
+    }
+  }
+}
