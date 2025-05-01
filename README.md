@@ -54,8 +54,6 @@ app/
 │  │  ├─ services/
 │  │  ├─ routes/
 │  │  ├─ middleware/
-│  │  └─ utils/calculateMonthlyPayment.ts
-│  └─ tests/
 ├─ frontend/           # React SPA (TypeScript)
 │  ├─ src/
 │  │  ├─ components/
