@@ -2,7 +2,7 @@ import { LenderOffer } from '@driva/types';
 import { ApplyPayload } from '@driva/types';
 
 export async function submitLoanApplication(payload: ApplyPayload): Promise<LenderOffer[]> {
-  const res = await fetch('http://localhost:3000/api/v1/loan', {
+  const res = await fetch('http://localhost:3000/api/v1/loan/apply', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

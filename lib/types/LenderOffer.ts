@@ -1,6 +1,6 @@
 export type LenderOffer = {
   lenderName: string;
   monthlyRepayment: number;
-  interestRate: string;
+  interestRate: number;
   fees: string;
 }

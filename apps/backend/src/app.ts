@@ -9,7 +9,7 @@ const ROUTE_PREFIX = process.env.ROUTE_PREFIX || '';
 app.use(cors());
 app.use(express.json());
 
-app.use(`${ROUTE_PREFIX}/loan`, loanRoutes);
+app.use(`${ROUTE_PREFIX}/`, loanRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
