@@ -1,15 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import PersonalDetailsForm from './pages/PersonalDetailsForm';
-import LoanDetailsForm from './pages/LoanDetailsForm';
+import { FormPage } from './pages/FormPage';
 import ResultsPage from './pages/ResultsPage';
-
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PersonalDetailsForm />} />
-        <Route path="/loan" element={<LoanDetailsForm />} />
+        <Route path="/" element={<FormPage />} />
         <Route path="/offers" element={<ResultsPage />} />
       </Routes>
     </BrowserRouter>

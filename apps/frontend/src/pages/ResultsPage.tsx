@@ -20,7 +20,7 @@ export default function ResultsPage() {
     const payload = { ...JSON.parse(personal), ...JSON.parse(loan) };
 
     submitLoanApplication(payload)
-      .then(( lenderOffers: LenderOffer[]) => {
+      .then((lenderOffers: LenderOffer[]) => {
         console.log(lenderOffers);
         setOffers(lenderOffers);
         setLoading(false);
@@ -36,18 +36,40 @@ export default function ResultsPage() {
   if (!offers?.length) return <p>No lenders available.</p>;
 
   return (
-    <div style={{ maxWidth: 600, margin: 'auto' }}>
-      <h2>Loan Offers</h2>
-      <ul>
+    <div style={{ maxWidth: '900px', margin: '2rem auto' }}>
+      <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>Loan Offers</h2>
+
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '1.5rem',
+        }}
+      >
         {offers.map((lender, index) => (
-          <li key={index} style={{ marginBottom: '1rem' }}>
-            <strong>{lender.lenderName}</strong><br />
-            Monthly Repayment: ${lender.monthlyRepayment.toFixed(2)}<br />
-            Interest Rate: {lender.interestRate}% APR<br />
-            Fees: ${lender.fees}
-          </li>
+          <div
+            key={index}
+            style={{
+              border: '1px solid #ccc',
+              borderRadius: '8px',
+              padding: '1rem',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
+              background: '#fff',
+            }}
+          >
+            <h3 style={{ marginBottom: '0.5rem' }}>{lender.lenderName}</h3>
+            <p>
+              <strong>Monthly Repayment:</strong> ${lender.monthlyRepayment.toFixed(2)}
+            </p>
+            <p>
+              <strong>Interest Rate:</strong> {lender.interestRate}% APR
+            </p>
+            <p>
+              <strong>Fees:</strong> {lender.fees}
+            </p>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

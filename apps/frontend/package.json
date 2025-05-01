@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite --mode dev-local",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:e2e": "pnpm exec cypress run"
   },
   "keywords": [],
   "author": "",
